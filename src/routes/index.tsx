@@ -829,34 +829,40 @@ function Portfolio() {
         </section>
 
         {/* CONTACT */}
-        <section id="contact" className="py-24 md:py-32">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <p className="text-sm font-medium text-primary mb-3 uppercase tracking-widest">
-              Contact
-            </p>
-            <h2 className="font-display text-4xl md:text-6xl font-bold leading-tight mb-6">
-              Let's talk <span className="text-gradient-primary">engineering</span>.
-            </h2>
-            <p className="text-lg text-muted-foreground mb-12 max-w-xl mx-auto">
-              Available for professional inquiries, utility leadership discussions, energy
-              efficiency conversations and sustainable manufacturing collaborations.
-            </p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <section id="contact" className="py-20 md:py-28">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="mx-auto max-w-3xl text-center">
+              <p className="text-sm font-medium text-primary mb-3 uppercase tracking-widest">
+                Contact
+              </p>
+              <h2 className="font-display text-4xl md:text-6xl font-bold leading-tight mb-6">
+                Let's talk <span className="text-gradient-primary">engineering</span>.
+              </h2>
+              <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground">
+                Available for professional inquiries, utility leadership discussions, energy
+                efficiency conversations and sustainable manufacturing collaborations.
+              </p>
+            </div>
+
+            <div className="mx-auto mt-12 grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-[minmax(320px,1.35fr)_repeat(3,minmax(0,1fr))]">
               <a
                 href={contact.emailHref}
                 target="_blank"
                 rel="noreferrer"
                 aria-label={`Email ${contact.email}`}
-                className="p-6 rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-elegant transition-smooth group sm:col-span-2"
+                className="group flex min-h-[150px] flex-col items-center justify-center rounded-2xl border border-primary/20 bg-card px-5 py-7 text-center shadow-soft transition-smooth hover:-translate-y-1 hover:border-primary/50 hover:shadow-elegant focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
               >
                 <Mail className="h-5 w-5 text-primary mb-3 mx-auto group-hover:scale-110 transition-smooth" />
                 <p className="text-xs text-muted-foreground">Work Email</p>
                 <p className="mt-1 break-all text-base font-semibold text-foreground underline decoration-primary/30 underline-offset-4">
                   {contact.email}
                 </p>
+                <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary">
+                  Open compose <ArrowRight className="h-3.5 w-3.5" />
+                </span>
               </a>
-              <div className="p-6 rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-elegant transition-smooth group">
-                <Phone className="h-5 w-5 text-primary mb-3 mx-auto group-hover:scale-110 transition-smooth" />
+              <div className="flex min-h-[150px] flex-col items-center justify-center rounded-2xl border border-border bg-card px-5 py-7 text-center shadow-soft">
+                <Phone className="h-5 w-5 text-primary mb-3 mx-auto" />
                 <p className="text-xs text-muted-foreground">Phone</p>
                 <p className="font-medium text-sm">By request</p>
               </div>
@@ -865,19 +871,22 @@ function Portfolio() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Open Uzzul Hoque's LinkedIn profile"
-                className="p-6 rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-elegant transition-smooth group"
+                className="group flex min-h-[150px] flex-col items-center justify-center rounded-2xl border border-border bg-card px-5 py-7 text-center shadow-soft transition-smooth hover:-translate-y-1 hover:border-primary/40 hover:shadow-elegant focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
               >
                 <Linkedin className="h-5 w-5 text-primary mb-3 mx-auto group-hover:scale-110 transition-smooth" />
                 <p className="text-xs text-muted-foreground">LinkedIn</p>
                 <p className="font-medium text-sm">LinkedIn profile</p>
               </a>
-              <div className="p-6 rounded-2xl bg-card border border-border">
+              <address className="flex min-h-[150px] flex-col items-center justify-center rounded-2xl border border-border bg-card px-5 py-7 text-center not-italic shadow-soft">
                 <MapPin className="h-5 w-5 text-primary mb-3 mx-auto" />
                 <p className="text-xs text-muted-foreground">Permanent Address</p>
-                <p className="font-medium text-sm">Purbachal City, Rupgonj, Narayanganj</p>
-              </div>
+                <p className="max-w-[18ch] text-sm font-medium leading-snug">
+                  Purbachal City, Rupgonj, Narayanganj
+                </p>
+              </address>
             </div>
-            <div className="mt-12 inline-flex items-center gap-2 text-sm text-muted-foreground">
+
+            <div className="mt-10 flex items-center justify-center gap-2 text-sm text-muted-foreground">
               <MapPin className="h-4 w-4" /> DBL Industrial Park Ltd · Bangladesh
             </div>
           </div>
