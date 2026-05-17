@@ -848,7 +848,7 @@ function Portfolio() {
               >
                 <Mail className="h-5 w-5 text-primary mb-3 mx-auto group-hover:scale-110 transition-smooth" />
                 <p className="text-xs text-muted-foreground">Work Email</p>
-                <p className="font-medium text-sm">Email Uzzul Hoque</p>
+                <p className="break-words text-sm font-medium">{contact.email}</p>
               </a>
               <div className="p-6 rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-elegant transition-smooth group">
                 <Phone className="h-5 w-5 text-primary mb-3 mx-auto group-hover:scale-110 transition-smooth" />
