@@ -74,7 +74,8 @@ const nav = [
 
 const contact = {
   email: "uzzul.hoque@dbl-group.com",
-  emailHref: "mailto:uzzul.hoque@dbl-group.com?subject=Portfolio%20Inquiry",
+  emailHref:
+    "https://mail.google.com/mail/?view=cm&fs=1&to=uzzul.hoque%40dbl-group.com&su=Portfolio%20Inquiry",
   linkedin: "https://www.linkedin.com/in/uzzul-hoque-950869409/",
 };
 
@@ -843,12 +844,16 @@ function Portfolio() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <a
                 href={contact.emailHref}
+                target="_blank"
+                rel="noreferrer"
                 aria-label={`Email ${contact.email}`}
-                className="p-6 rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-elegant transition-smooth group"
+                className="p-6 rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-elegant transition-smooth group sm:col-span-2"
               >
                 <Mail className="h-5 w-5 text-primary mb-3 mx-auto group-hover:scale-110 transition-smooth" />
                 <p className="text-xs text-muted-foreground">Work Email</p>
-                <p className="break-words text-sm font-medium">{contact.email}</p>
+                <p className="mt-1 break-all text-base font-semibold text-foreground underline decoration-primary/30 underline-offset-4">
+                  {contact.email}
+                </p>
               </a>
               <div className="p-6 rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-elegant transition-smooth group">
                 <Phone className="h-5 w-5 text-primary mb-3 mx-auto group-hover:scale-110 transition-smooth" />
