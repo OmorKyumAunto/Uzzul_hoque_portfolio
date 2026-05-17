@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>Engr. Uzzul Hoque</title>
+  <rect width="64" height="64" rx="12" fill="#0f172a"/>
+  <circle cx="48" cy="16" r="10" fill="#14b8a6"/>
+  <path fill="#f8fafc" d="M14 17h8v19c0 7 4 11 10 11s10-4 10-11V17h8v20c0 11-7 18-18 18s-18-7-18-18V17Z"/>
+  <path fill="#f8fafc" d="M25 17h8v14h13V17h8v38h-8V39H33v16h-8V17Z" opacity=".78"/>
+</svg>

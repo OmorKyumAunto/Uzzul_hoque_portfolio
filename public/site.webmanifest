@@ -1,0 +1,23 @@
+{
+  "name": "Engr. Uzzul Hoque",
+  "short_name": "Uzzul Hoque",
+  "description": "Professional portfolio of Engr. Uzzul Hoque, Head of Utility at DBL Group.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#0f766e",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/uzzul-hoque.png",
+      "sizes": "1088x1445",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

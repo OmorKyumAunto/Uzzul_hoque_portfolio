@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 
+import { absoluteSiteUrl, googleSiteVerification, siteMetadata } from "../lib/site-metadata";
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
@@ -68,36 +69,61 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Engr. Uzzul Hoque — Head of Utility, DBL Group" },
-      {
-        name: "description",
-        content:
-          "Professional portfolio of Engr. Uzzul Hoque, Head of Utility at DBL Industrial Park Ltd, DBL Group.",
-      },
-      { name: "author", content: "Engr. Uzzul Hoque" },
-      {
-        property: "og:title",
-        content: "Engr. Uzzul Hoque — Head of Utility, DBL Group",
-      },
-      {
-        property: "og:description",
-        content:
-          "Industrial utility leadership across power, steam, HVAC, water, ETP, energy efficiency and sustainable manufacturing.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-    ],
-    links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-    ],
-  }),
+  head: () => {
+    const imageUrl = absoluteSiteUrl(siteMetadata.imagePath);
+
+    return {
+      meta: [
+        { charSet: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { title: siteMetadata.title },
+        { name: "description", content: siteMetadata.description },
+        { name: "author", content: siteMetadata.author },
+        { name: "creator", content: siteMetadata.author },
+        { name: "publisher", content: siteMetadata.author },
+        ...(googleSiteVerification
+          ? [{ name: "google-site-verification", content: googleSiteVerification }]
+          : []),
+        {
+          name: "robots",
+          content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+        },
+        {
+          name: "googlebot",
+          content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+        },
+        { name: "theme-color", content: siteMetadata.themeColor },
+        { property: "og:site_name", content: siteMetadata.name },
+        { property: "og:title", content: siteMetadata.title },
+        { property: "og:description", content: siteMetadata.shortDescription },
+        { property: "og:type", content: "website" },
+        { property: "og:locale", content: siteMetadata.locale },
+        ...(imageUrl
+          ? [
+              { property: "og:image", content: imageUrl },
+              {
+                property: "og:image:alt",
+                content: "Portrait of Engr. Uzzul Hoque, Head of Utility at DBL Group",
+              },
+              { name: "twitter:image", content: imageUrl },
+            ]
+          : []),
+        { name: "twitter:card", content: imageUrl ? "summary_large_image" : "summary" },
+        { name: "twitter:title", content: siteMetadata.title },
+        { name: "twitter:description", content: siteMetadata.shortDescription },
+      ],
+      links: [
+        {
+          rel: "stylesheet",
+          href: appCss,
+        },
+        { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+        { rel: "manifest", href: "/site.webmanifest" },
+        { rel: "preconnect", href: "https://commons.wikimedia.org" },
+        { rel: "dns-prefetch", href: "https://commons.wikimedia.org" },
+      ],
+    };
+  },
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
@@ -106,7 +132,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang={siteMetadata.language}>
       <head>
         <HeadContent />
       </head>
